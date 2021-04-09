@@ -1,0 +1,18 @@
+<h1>Componente 1</h1>
+<h6>Encargado de Actualizar el Mensaje y el Valor en el MessageState</h6>
+<p>
+  Cuando realicemos cambios, podrás verlos en Redux Devtools y se verán reflejados en
+  el Componente 2
+</p>
+
+<!-- Input para cambiar el Mensaje -->
+<input type="text" [(ngModel)]="nuevoMensaje" />
+
+<!-- Botones que llaman al servicio para despachar acciones y actualizar el estado -->
+<button (click)="cambiarMensaje()">
+  ACTUALIZAR MENSAJE
+</button>
+
+<button (click)="cambiarValor()">
+  ACTUALIZAR VALOR
+</button>
