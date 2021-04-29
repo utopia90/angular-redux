@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StoreService } from 'src/app/services/store.service';
-import { ACTION_CAMBIO_MENSAJE, ACTION_CAMBIO_VALOR } from 'src/app/store/actions/actions.types';
+import { ACTION_CAMBIO_MENSAJE, ACTION_CAMBIO_VALOR, ACTION_INCREASE_COUNTER } from 'src/app/store/actions/actions.types';
+import CounterState from 'src/app/store/config/counterState.interface';
 import MessageState from 'src/app/store/config/messageState.interface';
 
 @Component({
@@ -13,6 +14,7 @@ export class UnoComponent implements OnInit {
   // Variables locales
   nuevoMensaje = '';
   valor = false;
+  nuevoContador:number=0;
 
   constructor(private storeService: StoreService) { }
 
@@ -21,6 +23,10 @@ export class UnoComponent implements OnInit {
     this.storeService.getState('messageState').subscribe((state: MessageState) => {
       this.nuevoMensaje = state.mensaje;
       this.valor = state.valor;
+    });
+
+    this.storeService.getState('counterState').subscribe((state: CounterState) => {
+      this.nuevoContador = state.counter;
     });
   }
 
@@ -32,6 +38,14 @@ export class UnoComponent implements OnInit {
     this.storeService.updateState({
       type: ACTION_CAMBIO_MENSAJE,
       payload: this.nuevoMensaje
+    })
+  }
+
+  incrementarContador(){
+    this.nuevoContador++;
+    this.storeService.updateState({
+      type: ACTION_INCREASE_COUNTER,
+      payload: this.nuevoContador
     })
   }
 

@@ -4,6 +4,7 @@
 import { ActionReducerMap } from "@ngrx/store";
 import { Action } from "../actions/action.interface";
 import { AppStore } from "../config/appStore.interface";
+import { counterReducer } from "./counterReducer";
 import { messageReducer } from "./messageReducer";
 
 // El Reducer devolverá un conjunto de:
@@ -11,6 +12,8 @@ import { messageReducer } from "./messageReducer";
 // Nos aseguramos de que se mapee correctamente la Interface del STORE y las ACTIONS
 export const RootReducer: ActionReducerMap<AppStore, Action> = {
   // estado: reducer
-  messageState: messageReducer
+  messageState: messageReducer,
+  counterState:counterReducer
+  
   // Aquí iríamos poniendo el resto de STATES y sus correspondientes REDUCERS
 }

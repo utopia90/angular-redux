@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { RootReducer } from './store/reducers/rootReducer';
 import { UnoComponent } from './components/uno/uno.component';
 import { DosComponent } from './components/dos/dos.component';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { DosComponent } from './components/dos/dos.component';
       {
         maxAge: 10, // Especificamos el número de acciones que se persisten en el tiempo
       }
-    )
+    ),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

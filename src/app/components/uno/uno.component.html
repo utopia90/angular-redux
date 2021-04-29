@@ -8,11 +8,14 @@
 <!-- Input para cambiar el Mensaje -->
 <input type="text" [(ngModel)]="nuevoMensaje" />
 
+<input type="text" [(ngModel)]="nuevoContador" />
+
+
 <!-- Botones que llaman al servicio para despachar acciones y actualizar el estado -->
 <button (click)="cambiarMensaje()">
   ACTUALIZAR MENSAJE
 </button>
 
-<button (click)="cambiarValor()">
-  ACTUALIZAR VALOR
+<button (click)="incrementarContador()">
+  SUMA
 </button>

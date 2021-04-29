@@ -6,3 +6,6 @@ export const ACTION_CAMBIO_MENSAJE = 'ACTION_CAMBIO_MENSAJE';
 
 // Acción que sirve para cambiar el valor booleano del Store
 export const ACTION_CAMBIO_VALOR = 'ACTION_CAMBIO_VALOR';
+
+export const ACTION_INCREASE_COUNTER =  'ACTION_INCREASE_COUNTER';
+
